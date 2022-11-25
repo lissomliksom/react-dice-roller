@@ -1,13 +1,18 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.animate-shake {
+  animation-name: shake;
+  animation-duration: 0.5s;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@keyframes shake {
+  from { transform: translate3d(0, 0, 0); }
+  15% { transform: translate3d(-30%, 0, 0) rotate3d(0, 0, 1, -6deg); }
+  30% { transform: translate3d(25%, 0, 0) rotate3d(0, 0, 1, 4deg); }
+  45% { transform: translate3d(-18%, 0, 0) rotate3d(0, 0, 1, -3deg); }
+  60% { transform: translate3d(12%, 0, 0) rotate3d(0, 0, 1, 2deg); }
+  75% { transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg); }
+  to { transform: translate3d(0, 0, 0); }
 }
